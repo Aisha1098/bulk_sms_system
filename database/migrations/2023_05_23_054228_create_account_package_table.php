@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('group_contact', function (Blueprint $table) {
-            $table->primary(['group_id','contact_id']);
-            $table->foreignId('group_id')->constrained()->onDelete('cascade');
-            $table->foreignId('contact_id')->constrained()->onDelete('cascade');
+        Schema::create('account_package', function (Blueprint $table) {
+            $table->primary(['account_id','package_id']);
+            $table->foreignId('account_id')->constrained()->onDelete('cascade');
+            $table->foreignId('package_id')->constrained()->onDelete('cascade');
+            $table->integer('rate_per_sms');
             $table->timestamps();
         });
     }
@@ -24,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('group_contact');
+        Schema::dropIfExists('account_package');
     }
 };

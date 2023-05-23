@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('message_recipient', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('recipient_id')->constrained()->onDelete('cascade');
             $table->foreignId('message_id')->constrained()->onDelete('cascade');
+            $table->foreignId('recipient_id')->constrained()->onDelete('cascade');
             $table->boolean('is_delivered');
             $table->string('carrier_type');
             $table->integer('message_count');

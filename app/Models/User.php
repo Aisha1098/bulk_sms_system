@@ -18,7 +18,10 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'active',
+        'profile_pic',
         'name',
+        'contact',
         'email',
         'password',
     ];
@@ -42,4 +45,16 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function groups(){
+        return $this->hasMany(Group::class);
+    }
+
+    public function contacts(){
+        return $this->hasMany(Contact::class);
+    }
+
+    public function accounts(){
+        return $this->hasOne(Account::class);
+    }
 }
