@@ -14,8 +14,8 @@ class Account extends Model
         'is_individual',
         'is_corporate',
         'is_enterprise',
+        'is_monthly_invoice',
         'senderID',
-        'monthly_invoice',
         'sms_rate_lim',
         'price'
     ];

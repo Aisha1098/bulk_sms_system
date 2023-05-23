@@ -13,7 +13,7 @@ class Package extends Model
         'is_custom',
         'name',
         'totla_sms',
-        'add_sms'
+        'additional_sms'
     ];
 
     public function accounts(){
