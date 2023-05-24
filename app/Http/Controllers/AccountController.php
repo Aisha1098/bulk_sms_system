@@ -31,7 +31,7 @@ class AccountController extends Controller
             'is_corporate' => 'sometimes|boolean',
             'is_enterprise' => 'sometimes|boolean',
             'is_monthly_invoice' => 'sometimes|boolean',
-            'senderID' => 'required|unique:App\Models\Account,senderID',
+            'senderID' => 'required|unique:accounts,senderID',
             'sms_rate_lim' => 'required',
             'price' => 'required'
         ]);
@@ -48,7 +48,7 @@ class AccountController extends Controller
             'is_corporate' => 'sometimes|boolean',
             'is_enterprise' => 'sometimes|boolean',
             'is_monthly_invoice' => 'sometimes|boolean',
-            'senderID' => 'required|unique:App\Models\Account,senderID',
+            'senderID' => 'required|unique:accounts,senderID',
             'sms_rate_lim' => 'required',
             'price' => 'required'
         ]);

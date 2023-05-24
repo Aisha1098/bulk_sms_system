@@ -29,10 +29,10 @@ class UserController extends Controller
             'is_active' => 'sometimes|boolean',
             'profile_pic' => 'required',
             'name' => 'required|max:30',
-            'email' => 'required|unique:App\Models\User,email|email',
-            'contact' => 'required',
+            'email' => 'required|unique:users,email|email',
+            'contact' => 'required|unique:users,contact',
             'email_verified_at' => 'required',
-            'password' => 'required|password|min:3'
+            'password' => 'required|min:3'
         ]);
         $user = User::create($validated);
 
@@ -45,10 +45,10 @@ class UserController extends Controller
             'is_active' => 'sometimes|boolean',
             'profile_pic' => 'required',
             'name' => 'required|max:30',
-            'email' => 'required|unique:App\Models\User,email|email',
-            'contact' => 'required',
+            'email' => 'required|email|unique:users,email,'.$user->id,
+            'contact' => 'required|unique:users,contact,'->$user->id,
             'email_verified_at' => 'required',
-            'password' => 'required|password|min:3'
+            'password' => 'required|min:3'
         ]);
         $user->update($validated);
 

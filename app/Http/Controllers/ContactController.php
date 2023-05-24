@@ -28,7 +28,7 @@ class ContactController extends Controller
         $validated = $request->validate([
             'user_id' => 'required',
             'name' => 'required',
-            'number' => 'required|integer|size:7',
+            'number' => 'required|integer',
         ]);
         $contact = Contact::create($validated);
         
@@ -40,7 +40,7 @@ class ContactController extends Controller
         $validated = $request->validate([
             'user_id' => 'required',
             'name' => 'required',
-            'number' => 'required|integer|size:7',
+            'number' => 'required|integer',
         ]);
         $contact->update($validated);
         
